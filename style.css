@@ -1,0 +1,416 @@
+/* ---------------- Global Styles ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url("about-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+/* ---------------- Navbar ---------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(1, 25, 49);
+  font-size: larger;
+  height: 60px;
+  padding: 0 20px;
+  color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.navname {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.bluetag {
+  color: #fcfbfa;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+.navlinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.navlinks a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navlinks a:hover {
+  border-bottom: 2px solid #01edfe;
+  transition: border-bottom 0.3s;
+}
+
+/* Dropdown nav for mobile */
+.navlinks.mobile {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgb(1, 25, 49);
+  position: absolute;
+  top: 60px;
+  left: 0;
+  text-align: center;
+  z-index: 99;
+}
+
+.navlinks.mobile a {
+  padding: 15px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ---------------- Main Content ---------------- */
+.main-body {
+  padding-top: 60px;
+}
+
+.main-bg {
+  position: absolute;
+  top: 60px;
+  height: 34rem;
+  width: 100%;
+  background: url("main_img.jpeg") no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+}
+
+.main-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 8rem 2rem 0 120px;
+  font-size: 4rem;
+  font-weight: bolder;
+  width: 70%;
+}
+
+/* ---------------- Address ---------------- */
+.add-cont {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 70px 0 0 50px;
+}
+
+.address {
+  font-weight: normal;
+  font-size: large;
+  margin-top: 50px;
+  background: rgba(0, 0, 0, 0.4);
+  width: 550px;
+  padding: 10px;
+}
+
+/* ---------------- About ---------------- */
+.about-sec {
+  margin-top: 70px;
+  padding: 0 50px;
+}
+
+.about-para {
+  width: 100%;
+}
+
+/* ---------------- Amenities ---------------- */
+.amenities {
+  background: rgb(12, 58, 105);
+  margin-top: 10px;
+  padding: 20px 50px;
+  color: white;
+}
+
+.amens {
+  padding: 10px;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.all_amens {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.box {
+  border: 1px solid #0b3655;
+  background: #565c5f;
+  color: white;
+  text-align: center;
+  border-radius: 30px;
+  width: 20vw;
+  height: 15vh;
+  padding: 10px;
+}
+
+/* ---------------- Gallery ---------------- */
+.gall {
+  background: rgb(38, 32, 32);
+  padding: 20px 0;
+}
+
+.gall-heading {
+  margin-left: 50px;
+  color: white;
+}
+
+.gallery-items {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.galleryImage {
+  width: 500px;
+  height: 200px;
+  object-fit: cover;
+}
+
+img{
+    width: 1000px;
+    height: 500px;
+    background-size: cover;
+}
+
+.btn {
+  background: none;
+  border: none;
+  font-size: xx-large;
+  color: white;
+  cursor: pointer;
+}
+
+/* ---------------- Contact ---------------- */
+.contact-page {
+  /* padding: 20px; */
+  max-width: 1000px;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 20px;
+    
+}
+
+.contact-sec1, .contact-sec2 {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input {
+  padding: 15px;
+  font-size: 1rem;
+  background: #023539;
+  border-radius: 10px;
+  border: 1px solid #023539;
+  color: whitesmoke;
+}
+
+.input:last-child {
+  width: 200px;
+  align-self: center;
+  background: #28a745;
+  color: black;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.input:last-child:hover {
+  background: #218838;
+}
+
+.mail, .phone {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-left: 50px;
+}
+
+.mail a, .phone a {
+  color: rgb(7, 6, 6);
+  text-decoration: none;
+}
+
+.mail a:hover, .phone a:hover {
+  color: #2c9c30;
+}
+
+.fa-envelope, .fa-phone {
+  font-size: 1.5rem;
+  color: #111711;
+}
+
+/* ---------------- Footer ---------------- */
+.footer {
+  background: #0b3655;
+  padding: 15px;
+  text-align: center;
+}
+
+.copyright {
+  color: #b4b0b0;
+  font-size: 0.8rem;
+}
+
+/* ---------------- Responsive ---------------- */
+@media screen and (max-width: 768px) {
+  .navlinks {
+    display: none;
+    gap: 0.5rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navlinks.mobile {
+    display: flex;
+  }
+
+  .main-bg{
+    height: 38rem;
+  }
+  .main-content {
+    padding: 5rem 20px;
+    font-size: 2.5rem;
+    width: 100%;
+  }
+
+  .add-cont {
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+    font-size: 1.5rem;
+  }
+
+  .address {
+    width: 90%;
+    text-align: center;
+  }
+
+  .about-sec {
+    padding: 0 20px;
+  }
+
+  .amenities{
+    padding-left: 0;
+    padding-left: 20px;
+
+  }
+  .box {
+    width: 100%;
+    height: 4rem;
+  }
+
+  .all_amens{
+    padding-left: 40px;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .gall-heading {
+    margin-bottom: 2rem;
+    margin-left: 0px;
+    margin-left: 20px;
+    color: white;
+  }
+
+  .gallery-items {
+    flex-direction: column;
+  }
+
+  .galleryImage {
+    width: 50%;
+    height: auto;
+  }
+
+  .galleryImage,
+  img {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .contact-page{
+    margin-left: 0px;
+    margin-left: 20px;
+  }
+  .mail, .phone {
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+
+.gallery-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+.gallery-items .btn {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #0f6cbd;  /* Blue color arrows */
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.gallery-items .btn:hover {
+  transform: scale(1.2);
+  color: #084c8a;
+}
+
+#galleryImage {
+  max-width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.5s ease;
+}

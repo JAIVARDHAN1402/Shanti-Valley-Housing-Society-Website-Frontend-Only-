@@ -1,0 +1,160 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Payment@ShantiValley</title>
+
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style2.css" />
+
+    </head>
+    <body>
+    <div class="payment-content">
+        <form id="paymentForm" class="paym">
+        <h2 class="heading-pay">Enter Payment Details</h2>
+
+        <div class="detailspay">
+
+            <!-- Block Select -->
+            <div class="block_flat">
+            <label for="block">Select Building</label>
+            <select name="block" id="block" onchange="select_block_flatno()" required>
+                <option value="">--Select Block--</option>
+                <option value="Prithvi">Prithvi</option>
+                <option value="Pratham">Pratham</option>
+                <option value="Aakash-3BHK">Aakash-3BHK</option>
+                <option value="Aakash-2BHK">Aakash-2BHK</option>
+                <option value="Prakriti">Prakriti</option>
+                <option value="Duplex">Duplex</option>
+            </select>
+            </div>
+
+            <!-- Flat Select -->
+            <br>
+            <div class="flat">
+            <label for="flat">Enter Flat</label>
+            <select name="flat" id="flat" onchange="putDate()" required>
+                <option value="">--Select Flat--</option>
+            </select>
+            </div>
+
+            <!-- Date -->
+            <br>
+            <div class="payon">
+            <label for="datepay">Payment On</label>
+            <input type="date" id="datepay" class="payDate" required readonly />
+            </div>
+
+            <!-- Month Dropdown -->
+            <br>
+            <div class="select_pmonth">
+            <label for="month">Enter Month(s)</label>
+            <div id="select_month"  >
+            
+            </div>
+            </div>
+
+            <!-- Name -->
+            <br>
+            <div class="name">
+            <label for="owner">Enter Name</label>
+            <input type="text" id="owner" name="owner" placeholder="Enter Flat Owner Name" required />
+            </div>
+
+            <!-- Amount -->
+            <br>
+            <div class="rps">
+            Total Amount : ₹<span class="amt_total">0</span>
+            </div>
+
+            <!-- Button -->
+            <div class="subBtn">
+            <button type="submit" class="submit" id="rzp-button">Submit & Pay</button>
+            </div>
+        </div>
+        </form>
+    </div>
+
+    <!-- Razorpay Script -->
+<!-- Razorpay SDK -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<!-- Razorpay Payment Script -->
+<script>
+  document.getElementById("paymentForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const owner = document.getElementById("owner").value.trim();
+    const flat = document.getElementById("flat").value.trim();
+    const block = document.getElementById("block").value.trim();
+    const payon = document.getElementById("datepay").value.trim();
+
+    // Get selected months
+    const selectedCheckboxes = document.querySelectorAll('input[name="fill_month"]:checked');
+    const selectedMonths = Array.from(selectedCheckboxes).map(cb => cb.value);
+
+    // Calculate total amount
+    const totalAmt = selectedMonths.length * 1700;
+
+    // Check all required values
+    if (!owner || !flat || !block || selectedMonths.length === 0 || totalAmt === 0) {
+      alert("Please fill all required fields.");
+      return;
+    }
+
+    const options = {
+      key: "rzp_test_tgRPr8blbwKava",
+      amount: totalAmt * 100, // Razorpay takes amount in paisa
+      currency: "INR",
+      name: "BNC Shanti Valley",
+      description: "Monthly Maintenance Payment",
+      handler: function (response) {
+        fetch("payment_success.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            payment_id: response.razorpay_payment_id,
+            owner,
+            flat,
+            block,
+            months: selectedMonths
+          })
+        })
+        .then(res => res.text())
+        .then(msg => {
+          localStorage.setItem("oname", owner);
+          localStorage.setItem("fno", flat);
+          localStorage.setItem("bname", block);
+          localStorage.setItem("paidon", payon);
+          localStorage.setItem("paymentof", selectedMonths.join(', '));
+          localStorage.setItem("tamt", totalAmt);
+          window.location.href = "pay_success.html";
+        });
+      },
+      prefill: {
+        name: owner,
+        email: "demo@email.com",
+        contact: "8709938626"
+      },
+      notes: {
+        Flat: flat,
+        Block: block
+      },
+      theme: {
+        color: "#0f6cbd"
+      }
+    };
+
+    const rzp = new Razorpay(options);
+    rzp.open();
+  });
+</script>
+
+    <!-- Your JS file -->
+    <script src="script.js"></script>
+    </body>
+    </html>

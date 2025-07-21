@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment_Success</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="thanks">
+            <div class="para">💰 Payment Successful — Shanti Valley</div>
+            <button class="btn_see" onclick="see_bill()">See Receipt</button>
+        </div>
+
+        <div class="receipt">
+            <div class="details">
+                <p class="bill-heading">BNC SHANTI VALLEY MAINTAINANCE BILL</p>
+                <div class="owner_details">
+                    <p class="oname">Flat Owner Name: </p>
+                    <p class="bname">Building Name: </p>
+                    <p class="fno">Flat Number: </p>
+                    <p class="payof">Payment Of: </p>
+                    <p class="paidon">Payment On: </p>
+                </div>
+                <div class="bill-footer">
+                    <div class="t_amt">
+                        <p class="money">Total Amount: </p>
+                        <span class="bill-id">MRID : </span>
+                    </div>
+                    <div class="sign">
+                        <img src="sign.jpg" alt="">
+                        <p class="svsign">Uma Shankar (Builder)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-print">
+            <button class="print" onclick="downloadPDF()">Print Receipt</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shanti Valley</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  </head>
+
+  <body>
+    <div class="navbar">
+        <div class="navname">
+            <b><span class="bluetag">S</span>hanti<span class="bluetag">V</span>alley</b>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="navlinks" id="navMenu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#amen">Amenities</a>
+            <a href="#gallery">Gallery</a>
+            <a href="login.html">Payments</a>
+            <a href="#Contactt">Contact</a>
+        </div>
+    </div>
+
+    <div class="main-body" id="home">
+      <div class="main-bg"></div>
+      <div class="main-content">
+        <div class="content">Find a place where Peace meets Nature.</div>
+      </div>
+      <div class="add-cont">
+        <div class="address">
+          Address: <br />
+          Q7P9+9P3 Shanti valley, Hurlung Road, Telco, Jamshedpur, PIN : 831001,
+          Jharkhand-831004
+        </div>
+      </div>
+    </div>
+    <div id="about"></div>
+    <div class="about-sec">
+      <div class="about-heading"><h1>About</h1></div>
+      <div class="about-para">
+        Shanti Valley Society, established in 2010, is a thoughtfully developed
+        residential township situated in the calm and green surroundings of
+        Hurlung, Telco – Jamshedpur. Designed for individuals and families
+        seeking peace, safety, and a deeper connection with nature, Shanti
+        Valley blends modern infrastructure with the soothing charm of open
+        landscapes. It offers a lifestyle rooted in simplicity, wellness, and
+        community spirit — far from the stress and noise of the city, yet close
+        enough to keep you connected to everything that matters. <br /><br />
+
+        The society is strategically located with excellent connectivity to
+        major parts of the city, including Telco, Birsanagar, Baridih, Golmuri,
+        Sakchi, and the National Highway (NH-33), making daily commutes and
+        essential travel quick and convenient. Schools, hospitals, banks,
+        markets, and daily need stores are easily accessible from within
+        minutes, ensuring comfort without compromise. <br /><br />
+
+        Over the past decade, Shanti Valley has become home to over 120+ happy
+        families, who enjoy not only a clean and secure environment but also the
+        warmth of a closely knit community. The township features wide concrete
+        roads, proper drainage, street lighting, lush green parks, children’s
+        play areas, and 24×7 gated security — all maintained with care and
+        dedication. Each home is constructed using quality materials with a
+        focus on long-term durability, space optimization, and peaceful living.
+        <br /><br />
+
+        What truly sets Shanti Valley apart is the community it nurtures.
+        Neighbors here are more than just residents — they’re companions in
+        festivals, friends in daily life, and a support system when needed.
+        Children grow up playing safely in open spaces, elders find peace in
+        their morning and evening walks, and every resident experiences a sense
+        of belonging that's hard to find elsewhere. <br /><br />
+
+        If you're searching for a home that offers more than just four walls — a
+        home that brings peace, purpose, and people together — then Shanti
+        Valley welcomes you with open arms and a peaceful heart.
+      </div>
+    </div>
+    <div id="amen"></div>
+    <div class="amenities">
+      <h1 class="amen-heading">Amenities</h1>
+      <div class="all_amens">
+        <div class="amens box">🔐 24×7 Gated Security</div>
+        <div class="amens box">💡 Street Lighting</div>
+        <div class="amens box">💧 Proper Drainage System</div>
+        <div class="amens box">🚗 Dedicated Parking Spaces</div>
+        <div class="amens box">🛕 Temple Inside Campus</div>
+        <div class="amens box">🧒 Children’s Play Area</div>
+        <div class="amens box">🌳 Lush Green Landscaping</div>
+        <div class="amens box">🚶 Walking & Jogging Paths</div>
+        <div class="amens box">🏢 Community Hall</div>
+        <div class="amens box">🏋️ Modern Gym Facility</div>
+        <div class="amens box">⚡ Generator Backup</div>
+        <div class="amens box">🛍️ Fresh India Mall</div>
+        <div class="amens box">🧹 Clean & Peaceful Environment</div>
+        <div class="amens box">🧭 Excellent City & Highway Connectivity</div>
+      </div>
+    </div>
+    <div class="" id="gallery"></div>
+    <div class="gallery"></div>
+    <div class="gall">
+      <h1 class="gall-heading">Gallery</h1>
+      <div class="gallery-items">
+        <button class="btn ptbn" onclick="prevImage()"><i class="fa-solid fa-circle-chevron-left"></i></button>
+        <img id="galleryImage" src="img1.jpg" alt="Gallery Image" />
+        <button class="btn nbtn" onclick="nextImage()"><i class="fa-solid fa-circle-chevron-right"></i></button>
+      </div>
+    </div>
+    <div id="Contactt"></div>
+    <div id="contact-page" class="contact-page">
+      <h1 class="con-heading">Contact Us</h1>
+      <div class="contact-container">
+        <div class="contact-sec1">
+          <form action="" class="form">
+            <input class="input" type="text" placeholder="Your Name" required />
+            <input class="input" type="email"placeholder="Your Email" required/>
+            <input class="input" type="text" placeholder="Your Message" required/>
+            <input class="input" type="submit" value="Send Message" />
+          </form>
+        </div>
+        <div class="contact-sec2">
+          <div class="mail">
+            <i class="fa-solid fa-envelope"></i>
+            <div class="email">
+              <a
+                href="mailto:jaivardhan1402@gmail.com?subject=Hello&body=I want to contact you!"
+                target="blank"
+              >
+                shantivalley@gmail.com
+              </a>
+            </div>
+          </div>
+          <div class="phone">
+            <i class="fa-solid fa-phone"></i>
+            <div class="call">
+              <a href="https://wa.me/918709938626" target="blank"
+                >+91 8709938626</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+        <p class="copyright">© 2010-Present, Made with Love by shantivalley.com</p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
